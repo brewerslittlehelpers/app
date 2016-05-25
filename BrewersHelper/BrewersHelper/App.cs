@@ -13,6 +13,7 @@ namespace BrewersHelper
 {
     public class App : Application
     {
+
         public App()
         {
             var buttonStyle = new Style(typeof(Button))
