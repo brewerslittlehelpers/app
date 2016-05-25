@@ -13,6 +13,7 @@ namespace BrewersHelper
 {
     public class App : Application
     {
+
         public App()
         {
             var nav = new NavigationService();
