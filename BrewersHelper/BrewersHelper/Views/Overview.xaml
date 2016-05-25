@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BrewersHelper.Views.Overview">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.Views.Overview">
   <StackLayout>
-    <Label Text="This is the overview page" VerticalOptions="Center" HorizontalOptions="Center" />
-    <Button FontSize="11" Text="{Binding ReadingsButtonLabel}" Command="{Binding ReadingsButtonCommand}"
-            VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label Text="This is the overview page"/>
+    <Button Text="{Binding ReadingsButtonLabel}" Command="{Binding ReadingsButtonCommand}"/>
   </StackLayout>
 </ContentPage>
