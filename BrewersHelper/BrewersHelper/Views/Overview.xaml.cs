@@ -17,6 +17,8 @@ namespace BrewersHelper.Views
         {
             InitializeComponent();
             BindingContext = new OverviewViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
+
+			ContentView graph = new GraphView ();
         }
     }
 }

@@ -17,6 +17,17 @@ namespace BrewersHelper
 		public double Alcohol { get; set; }
 		public double Gravity { get; set; }
 		public double PH { get; set; }
+
+		override public string ToString()
+		{
+			return "Id: " + Id +"\n"+
+				"BatchKey: " + O2MBatchKey +"\n"+
+				"Time: " + Time +"\n"+
+				"Alcohol: " + Alcohol +"\n"+
+				"Temp: " + Temp +"\n"+
+				"Gravity: " + Gravity +"\n"+
+				"pH: " + PH ;
+		}
 	}
 }
 

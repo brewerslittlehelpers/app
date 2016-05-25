@@ -20,7 +20,7 @@ namespace BrewersHelper
 				new DataPoint(50, 12)
 			};
 
-			var m = new PlotModel ("Titleee");
+			var m = new PlotModel ();
 			m.PlotType = PlotType.XY;
 
 			var s = new LineSeries ();

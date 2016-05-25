@@ -16,6 +16,11 @@ namespace BrewersHelper
 			_connection.CreateTable<SampleModel> ();
 		}
 
+//		public IEnumerable<SampleModel> GetSamplesFromBatch(int id)
+//		{
+//			// stub
+//		}
+
 		public IEnumerable<SampleModel> GetSamples() 
 		{
 			return (from s in _connection.Table<SampleModel> ()
