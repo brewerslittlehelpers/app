@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BrewersHelper.Views.Menu">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.Views.Menu">
   <StackLayout VerticalOptions="End">
     <Grid>
       <Grid.RowDefinitions>
@@ -14,10 +11,10 @@
         <ColumnDefinition Width="0.25*" />
         <ColumnDefinition Width="0.25*" />
       </Grid.ColumnDefinitions>
-      <Button FontSize="11" Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Column ="0"/>
-      <Button FontSize="11" Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Column ="1"/>
-      <Button FontSize="11" Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Column ="2"/>
-      <Button FontSize="11" Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Column ="3"/>
+      <Button Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Column ="0"/>
+      <Button Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Column ="1"/>
+      <Button Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Column ="2"/>
+      <Button Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Column ="3"/>
     </Grid>
   </StackLayout>
 </ContentPage>
