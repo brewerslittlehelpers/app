@@ -2,20 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrewersHelper.Views.Overview">
-	<ContentView>
-		<StackLayout>
+		<StackLayout VerticalOptions="Start">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
 
-			<StackLayout x:Name="graph" Orientation="Vertical">
+			</Grid>
 
+			<Label Text="Reading" x:Name="AlcoholReadingLabel" Grid.Row="0"/>
+			<BoxView Color="Gray" Grid.Row="1"/>
+			<Button Text="Treshhold" Grid.Row="2"/>
+
+			<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+				<Label Text="Reading" x:Name="GravityReadingLabel"></Label>
+				<BoxView Color="Gray"></BoxView>
+				<Button Text="Treshhold"></Button>
 			</StackLayout>
+			<StackLayout>
+				<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
 
-			<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+	    		<Label Text="This is the overview page" VerticalOptions="Center" HorizontalOptions="Center" />
+	    		<Button FontSize="11" Text="{Binding ReadingsButtonLabel}" Command="{Binding ReadingsButtonCommand}"
+	            VerticalOptions="Center" HorizontalOptions="Center" />
+  			</StackLayout>
+		</StackLayout>
 
-    		<Label Text="This is the overview page" VerticalOptions="Center" HorizontalOptions="Center" />
-    		<Button FontSize="11" Text="{Binding ReadingsButtonLabel}" Command="{Binding ReadingsButtonCommand}"
-            VerticalOptions="Center" HorizontalOptions="Center" />
-  		</StackLayout>
-
-	</ContentView>
 
 </ContentPage>
