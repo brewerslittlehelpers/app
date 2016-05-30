@@ -28,7 +28,8 @@ namespace BrewersHelper
 					new Setter { Property = VisualElement.WidthRequestProperty, Value = 200 },
 					new Setter { Property = Button.TextColorProperty, Value = Color.Red },
                     new Setter { Property = Button.BackgroundColorProperty, Value = Color.White },
-                    new Setter { Property = Button.FontSizeProperty, Value = 10 }
+                    new Setter { Property = Button.FontSizeProperty, Value = 10 },
+                    new Setter { Property = Button.FontAttributesProperty, Value = FontAttributes.Bold }
                 }
 			};
 
@@ -36,12 +37,13 @@ namespace BrewersHelper
             {
                 Setters =
                 {
-                    new Setter { Property = View.HorizontalOptionsProperty, Value = LayoutOptions.Center },
-                    new Setter { Property = View.VerticalOptionsProperty, Value = LayoutOptions.CenterAndExpand },
-                    new Setter { Property = VisualElement.WidthRequestProperty, Value = 200 },
-                    new Setter { Property = Label.TextColorProperty, Value = Color.Red },
-                    new Setter { Property = Label.BackgroundColorProperty, Value = Color.White },
-                    new Setter { Property = Label.FontSizeProperty, Value = 16 }
+                    new Setter { Property = View.HorizontalOptionsProperty, Value = LayoutOptions.CenterAndExpand },
+                    new Setter { Property = View.VerticalOptionsProperty, Value = LayoutOptions.Start },
+                    //new Setter { Property = VisualElement.WidthRequestProperty, Value = 200 },
+                    new Setter { Property = Label.TextColorProperty, Value = Color.White },
+                    new Setter { Property = Label.FontSizeProperty, Value = 12 },
+                    new Setter { Property = Label.FontAttributesProperty, Value = FontAttributes.Bold },
+                    new Setter { Property = Label.TextProperty, Value = TextAlignment.Center }
                 }
             };
 

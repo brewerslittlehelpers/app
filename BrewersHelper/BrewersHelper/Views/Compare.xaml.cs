@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using Xamarin.Forms;
 
 namespace BrewersHelper.Views
@@ -16,6 +17,7 @@ namespace BrewersHelper.Views
         public Compare()
         {
             InitializeComponent();
+            BindingContext = new CompareViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
         }
     }
 }
