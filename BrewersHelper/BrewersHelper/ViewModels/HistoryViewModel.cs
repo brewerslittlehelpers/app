@@ -27,10 +27,22 @@ namespace BrewersHelper.ViewModels
         public HistoryViewModel(INavigationService navigationService)
         {
             _navigationservice = navigationService;
-
+			Test = "test";
             CompareButtonLabel = "Compare";
             CompareButtonCommand = new Command(() =>
             _navigationservice.NavigateTo(Locator.Compare));
         }
+
+		public string[] batches = new string[3] {"Matt", "Joanne", "Robert"};
+
+		private string test;
+
+		public string Test
+		{
+			get { return test; }
+			set { test = value; }
+		}
+		
+
     }
 }

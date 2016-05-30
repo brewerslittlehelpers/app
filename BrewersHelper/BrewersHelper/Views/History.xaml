@@ -7,5 +7,6 @@
     <Label Text="This is the history page" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button FontSize="11" Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"
             VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label Text="{Binding test}" VerticalOptions="Center" HorizontalOptions="Center" />
   </StackLayout>
 </ContentPage>
