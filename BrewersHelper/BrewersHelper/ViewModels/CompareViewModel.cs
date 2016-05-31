@@ -12,7 +12,7 @@ namespace BrewersHelper.ViewModels
 {
     class CompareViewModel : ViewModelBase
     {
-        /*private string brewOne;
+        private string brewOne;
         private string brewTwo;
 
         public string BrewOne
@@ -25,15 +25,15 @@ namespace BrewersHelper.ViewModels
         {
             get { return brewTwo; }
             set { brewTwo = value; RaisePropertyChanged(() => BrewTwo); }
-        }*/
+        }
 
         public ObservableCollection<ChartDataPoint> Batch3 { get; set; }
         public ObservableCollection<ChartDataPoint> Batch5 { get; set; }
 
         public CompareViewModel(INavigationService navigationService)
         {
-            //BrewOne = "Brew one";
-            //BrewTwo = "Brew two";
+            BrewOne = "Tims Pale Batch 3";
+            BrewTwo = "Tims Pale Batch 5";
 
             Batch3 = new ObservableCollection<ChartDataPoint>();
             Batch3.Add(new ChartDataPoint("1", 1.054));

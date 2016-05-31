@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.Views.Compare"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BrewersHelper.Views.Compare" BackgroundColor="#2d3e50"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms">
-  <ScrollView Padding="5">
+  
     <chart:SfChart>
 
       <chart:SfChart.Title>
@@ -29,10 +30,10 @@
       </chart:SfChart.Legend>
 
       <chart:SfChart.Series>
-        <chart:SplineSeries  Label = "Tims Pale Batch 3" ItemsSource = "{Binding Batch3}"/>
-        <chart:SplineSeries  Label = "Tims Pale Batch 5" ItemsSource = "{Binding Batch5}"/>
+        <chart:SplineSeries  Label = "{Binding BrewOne}" ItemsSource = "{Binding Batch3}"/>
+        <chart:SplineSeries  Label = "{Binding BrewTwo}" ItemsSource = "{Binding Batch5}"/>
       </chart:SfChart.Series>
 
     </chart:SfChart>
-  </ScrollView>
+  
 </ContentPage>
