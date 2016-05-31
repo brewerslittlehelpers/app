@@ -56,7 +56,8 @@ namespace BrewersHelper
             nav.Configure(Locator.Readings, typeof(Readings));
             nav.Configure(Locator.ManageDevices, typeof(ManageDevices));
             nav.Configure(Locator.Thresholds, typeof(Thresholds));
-            nav.Configure(Locator.Compare, typeof(Compare));
+			nav.Configure(Locator.Compare, typeof(Compare));
+            nav.Configure(Locator.HelperPage, typeof(HelperPage));
 
             SimpleIoc.Default.Register<INavigationService>(()=>nav);
 

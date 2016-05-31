@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.HelperPage">
+
+<Label Text="Page" VerticalOptions="Start" />
+
+<!--<StackLayout>
+<ListView x:Name="listView" ItemTapped="OnItemTapped" ItemsSource="{Binding .}">
+	<DataTemplate>
+		<ViewCell>
+			<ViewCell.ContextActions>
+				<MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="More" />
+				<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+			</ViewCell.ContextActions>
+		</ViewCell>
+	</DataTemplate>
+</ListView>
+
+<Button Text="Delete all" />
+</StackLayout>-->
+
+<StackLayout>
+<ListView x:Name="listView" ItemsSource="{Binding helperList}">
+  <ListView.ItemTemplate>
+    <DataTemplate>
+      <ViewCell>
+         <ViewCell.ContextActions>
+            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+               Text="Delete" IsDestructive="True" />
+          <!-- <MenuItem Command="{Binding DeleteHelperCommand}" CommandParameter="{Binding .}"
+           Text="Delete" IsDestructive="True" />-->
+         </ViewCell.ContextActions>
+         <StackLayout Padding="15,0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*" />
+					<ColumnDefinition Width="1*" />
+				</Grid.ColumnDefinitions>
+            	<Label Text="{Binding}" HorizontalOptions="End" Grid.Column="0" />
+            	<ProgressBar Progress="0.1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="100" />
+			<Label Text="10%" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="50" />
+			</Grid>
+         </StackLayout>
+      </ViewCell>
+    </DataTemplate>
+  </ListView.ItemTemplate>
+</ListView>
+<Button Text="{Binding AddHelperLabel}" Command="{Binding AddHelperCommand}" />
+</StackLayout>
+
+<!--<StackLayout>
+ <ListView>
+  	<ListView.ItemTemplate>
+  		<DataTemplate>
+		    <TextCell Text="This is the manage devices page2" />
+		    <TextCell Text="This is the manage devices page3"  />
+		    <TextCell Text="This is the manage devices page4"  />
+		    <TextCell Text="This is the manage devices page4"  />
+		</DataTemplate>
+	</ListView.ItemTemplate>
+</ListView>  
+</StackLayout>-->
+	<!--<ScrollView>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="2*" />
+				<RowDefinition Height="2*" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<Label Text="Helper x. Data binding here" FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" />
+			<Label Text="What information do we want here?" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" />
+			<Label Text="What information do we want here?" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" />
+			<Button Text="Delete Helper x?" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Clicked="deleteHelper" />
+		</Grid>
+	</ScrollView>-->
+</ContentPage>

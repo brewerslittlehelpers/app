@@ -14,6 +14,7 @@ namespace BrewersHelper.Implementations
         public static string Compare = "Compare";
         public static string ManageDevices = "ManageDevices";
         public static string Thresholds = "Thresholds";
-        public static string Readings = "Readings";
+		public static string Readings = "Readings";
+		public static string HelperPage = "HelperPage";
     }
 }
