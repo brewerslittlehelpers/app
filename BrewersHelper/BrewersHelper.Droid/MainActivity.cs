@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace BrewersHelper.Droid
 {
-    [Activity(Label = "BrewersHelper", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "BrewersHelper", Icon = "@drawable/cup_image", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
