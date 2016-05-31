@@ -1,9 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BrewersHelper.Views.Compare">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-  <StackLayout>
-    <Label Text="This is the Compare page" VerticalOptions="Center" HorizontalOptions="Center" />
-  </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BrewersHelper.Views.Compare" BackgroundColor="#2d3e50"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms">
+  
+    <chart:SfChart>
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Brew Comparison"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis>
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Days"/>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis>
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Specific Gravity"/>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+        <chart:SplineSeries  Label = "{Binding BrewOne}" ItemsSource = "{Binding Batch3}"/>
+        <chart:SplineSeries  Label = "{Binding BrewTwo}" ItemsSource = "{Binding Batch5}"/>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+  
 </ContentPage>

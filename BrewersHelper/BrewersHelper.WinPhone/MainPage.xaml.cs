@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.SfChart.XForms.WinPhone;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace BrewersHelper.WinPhone
     {
         public MainPage()
         {
+            new SfChartRenderer();
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;

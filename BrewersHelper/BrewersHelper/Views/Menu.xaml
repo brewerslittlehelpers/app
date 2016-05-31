@@ -1,10 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BrewersHelper.Views.Menu">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-  <StackLayout VerticalOptions="End">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BrewersHelper.Views.Menu" BackgroundColor="#2d3e50">
+
     <Grid>
+      
+      <Grid.RowDefinitions>
+        <RowDefinition Height="2*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+
+      <Button Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Row ="1"/>
+      <Button Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Row ="2"/>
+      <Button Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Row ="3"/>
+      <Button Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Row ="4"/>
+
+      <Image Grid.Column="0" Source="cup_image.png"/>
+
+    </Grid>  
+    
+    <!--<Grid>
       <Grid.RowDefinitions>
         <RowDefinition Height="auto" />
       </Grid.RowDefinitions>
@@ -14,10 +36,10 @@
         <ColumnDefinition Width="0.25*" />
         <ColumnDefinition Width="0.25*" />
       </Grid.ColumnDefinitions>
-      <Button FontSize="11" Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Column ="0"/>
-      <Button FontSize="11" Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Column ="1"/>
-      <Button FontSize="11" Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Column ="2"/>
-      <Button FontSize="11" Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Column ="3"/>
-    </Grid>
-  </StackLayout>
+      <Button Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Column ="0"/>
+      <Button Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Column ="1"/>
+      <Button Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Column ="2"/>
+      <Button Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Column ="3"/>
+    </Grid>-->
+  
 </ContentPage>

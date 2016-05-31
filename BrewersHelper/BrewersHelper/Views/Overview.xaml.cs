@@ -17,6 +17,22 @@ namespace BrewersHelper.Views
         {
             InitializeComponent();
             BindingContext = new OverviewViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
+
+			this.Appearing += Overview_Appearing;
         }
+
+        void Overview_Appearing (object sender, EventArgs e)
+        {
+			// read data from model
+			AlcoholReadingLabel.Text = "35";
+
+			// Add a comment
+			// hello
+
+        }
+
+		void something()
+		{
+		}
     }
 }
