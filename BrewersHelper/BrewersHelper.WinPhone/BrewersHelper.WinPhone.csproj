@@ -123,6 +123,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Syncfusion.SfChart.WP">
+      <HintPath>..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.1.0.41\Xamarin\lib\wp81\Syncfusion.SfChart.WP.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.1.0.41\Xamarin\lib\wp81\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms.WinPhone">
+      <HintPath>..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.1.0.41\Xamarin\lib\wp81\Syncfusion.SfChart.XForms.WinPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.2.0.45\lib\wpa81\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
