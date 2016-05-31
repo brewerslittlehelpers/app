@@ -72,6 +72,9 @@
     <Compile Include="Models\SampleModel.cs" />
     <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="SetTimer.xaml.cs">
+      <DependentUpon>SetTimer.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616">
@@ -114,6 +117,9 @@
     <EmbeddedResource Include="Views\Menu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetTimer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

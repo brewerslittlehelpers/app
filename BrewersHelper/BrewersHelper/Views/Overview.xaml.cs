@@ -25,14 +25,7 @@ namespace BrewersHelper.Views
         {
 			// read data from model
 			AlcoholReadingLabel.Text = "35";
-
-			// Add a comment
-			// hello
-
         }
 
-		void something()
-		{
-		}
     }
 }
