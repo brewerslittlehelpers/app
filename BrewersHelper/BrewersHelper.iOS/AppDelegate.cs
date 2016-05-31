@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Syncfusion.SfChart.XForms.iOS.Renderers;
 
 namespace BrewersHelper.iOS
 {
@@ -22,6 +23,7 @@ namespace BrewersHelper.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            new SfChartRenderer();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

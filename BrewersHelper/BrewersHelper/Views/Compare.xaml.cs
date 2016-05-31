@@ -16,6 +16,7 @@ namespace BrewersHelper.Views
         public Compare()
         {
             InitializeComponent();
+            BindingContext = new CompareViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
         }
     }
 }
