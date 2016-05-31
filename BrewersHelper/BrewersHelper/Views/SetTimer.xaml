@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Testing.P6SetTimer"
+	BackgroundColor="#2d3e50"
+	>
+	<ScrollView>
+		<!-- MAIN CONTAINER -->
+		<Grid
+			ColumnSpacing="0" 
+			RowSpacing="0" 
+			Padding="0, 20, 0, 20"
+			HorizontalOptions="Fill"
+			VerticalOptions="FillAndExpand" >
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="2" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<StackLayout 
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill" 
+				Grid.Column="1"
+				BackgroundColor="White"
+			/>
+
+
+
+			<StackLayout
+				Grid.Column="0">
+
+				<Image
+					Source="home_image.png"
+					WidthRequest="30"
+					HeightRequest="30"
+					HorizontalOptions="Start"
+					TranslationX="5"
+				/>
+
+				<Image
+					Source="bee_image.png"
+					WidthRequest="105"
+					HeightRequest="55"
+					HorizontalOptions="Start"
+					TranslationX="15"
+					TranslationY="5"
+				/>
+
+				<Image
+					Source="cup_image.png"
+					WidthRequest="105"
+					HeightRequest="112"
+					HorizontalOptions="Center"
+					TranslationY="10"
+				/>
+
+				<StackLayout
+					HorizontalOptions="Fill"
+					Padding="10,0,10,0"
+					TranslationY="20">
+
+					<BoxView
+						HorizontalOptions="Fill"
+						VerticalOptions="Center"
+						HeightRequest="2"
+						Color="White"/>
+
+				</StackLayout>
+
+				<Grid
+					RowSpacing="10"
+					HorizontalOptions="Fill"
+					Padding="10"
+					TranslationY="40">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height="20" />
+						<RowDefinition Height="20" />
+						<RowDefinition Height="20" />
+						<RowDefinition Height="5" />
+						<RowDefinition Height="250" />
+					</Grid.RowDefinitions>
+
+					<Label 
+						Text="Current Temperature"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="Start"
+						VerticalOptions="Start"
+						Grid.Row="0"
+					/>
+
+					<Label 
+						Text="35°C"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="End"
+						VerticalOptions="Start"
+						Grid.Row="0"
+					/>
+
+					<Label 
+						Text="Current Gravity"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="Start"
+						VerticalOptions="Start"
+						TranslationX="10"
+						Grid.Row="1"
+					/>
+
+					<Label 
+						Text="1.35SG"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="End"
+						VerticalOptions="Start"
+						TranslationX="-10"
+						Grid.Row="1"
+					/>
+
+					<Label 
+						Text="Current Alcohol %"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="Start"
+						VerticalOptions="Start"
+						TranslationX="10"
+						Grid.Row="2"
+					/>
+
+					<Label 
+						Text="3.5%"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						HorizontalOptions="End"
+						VerticalOptions="Start"
+						TranslationX="-10"
+						Grid.Row="2"
+					/>
+
+					<BoxView
+						HorizontalOptions="Fill"
+						VerticalOptions="Center"
+						HeightRequest="2"
+						Color="White"
+						Grid.Row="3"/>
+
+					<BoxView
+						HorizontalOptions="Center"
+						VerticalOptions="Fill"
+						WidthRequest="2"
+						Color="White"
+						Grid.Row="4"/>
+
+					<BoxView
+						HorizontalOptions="Fill"
+						VerticalOptions="Center"
+						HeightRequest="2"
+						Color="White"
+						Grid.Row="4"/>
+
+					<Grid
+						HorizontalOptions="Fill"
+						VerticalOptions="Fill"
+						Grid.Row="4">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Image
+							x:Name="imgIconTemperature"
+							Source="temperature_image.png"
+							WidthRequest="45"
+							HeightRequest="80"
+							HorizontalOptions="Center"
+							VerticalOptions="Center"
+							Grid.Row="0"
+							Grid.Column="0"
+						/>
+
+						<Image
+							x:Name="imgIconGravity"
+							Source="gravity_image.png"
+							WidthRequest="65"
+							HeightRequest="74"
+							HorizontalOptions="Center"
+							VerticalOptions="Center"
+							Grid.Row="0"
+							Grid.Column="1"
+						/>
+
+						<Image
+							x:Name="imgIconAlcohol"
+							Source="alcohol_image.png"
+							WidthRequest="50"
+							HeightRequest="77"
+							HorizontalOptions="Center"
+							VerticalOptions="Center"
+							Grid.Row="1"
+							Grid.Column="0"
+						/>
+
+						<Image
+							x:Name="imgIconHistory"
+							Source="history_image.png"
+							WidthRequest="62"
+							HeightRequest="53"
+							HorizontalOptions="Center"
+							VerticalOptions="Center"
+							Grid.Row="1"
+							Grid.Column="1"
+						/>
+
+					</Grid>
+
+
+				</Grid>
+
+
+
+
+			</StackLayout>
+
+			<StackLayout
+				Grid.Column="2"
+				TranslationY="60">
+
+				<StackLayout 
+					Padding="10, 10, 20, 10">
+					<Label 
+						Text="Process Name"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+					/>
+					<Entry 
+						Text="" 
+						BackgroundColor="White"
+						TranslationX="10"
+					/>
+				</StackLayout>
+
+				<StackLayout 
+					Padding="10, 10, 20, 10">
+					<Label 
+						Text="Process Style"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+					/>
+					<Entry 
+						Text="" 
+						BackgroundColor="White"
+						TranslationX="10"
+					/>
+				</StackLayout>
+
+				<StackLayout>
+
+					<Label 
+						Text="Process Duration"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						TranslationX="10"
+					/>
+
+					<Grid
+						Padding="10,0,10,0">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="15" />
+						</Grid.ColumnDefinitions>
+
+						<Slider
+							x:Name="sliderDuration"
+							Grid.Column="0"
+							Minimum="0"
+							Maximum="100"
+							Value="65"
+						/>
+
+						<Label 
+							x:Name="lblDuration"
+							Text="65 Min"
+							FontSize="10"
+							TextColor="White"
+							Grid.Column="1"
+							TranslationY="10"
+						/>
+						<Image
+							x:Name="imgBellProcessDuration"
+							Source="bell_image.png"
+							WidthRequest="13"
+							HeightRequest="24"
+							Grid.Column="2"
+						/>
+
+					</Grid>
+				</StackLayout>
+
+				<StackLayout>
+					<Label 
+						Text="Threshold Temperature"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						TranslationX="10"
+					/>
+
+					<Grid
+						Padding="10,0,10,0">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="15" />
+						</Grid.ColumnDefinitions>
+
+						<Slider
+							x:Name="sliderTemperature"
+							Grid.Column="0"
+							Minimum="0"
+							Maximum="100"
+							Value="65"
+						/>
+
+						<Label 
+							x:Name="lblTemperature"
+							Text="65°C"
+							FontSize="10"
+							TextColor="White"
+							Grid.Column="1"
+							TranslationY="10"
+						/>
+
+						<Image
+							x:Name="imgBellThreholdTemperature"
+							Source="bell_image.png"
+							WidthRequest="13"
+							HeightRequest="24"
+							Grid.Column="2"
+						/>
+
+					</Grid>
+				</StackLayout>
+
+				<StackLayout>
+					<Label 
+						Text="Threshold Gravity"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						TranslationX="10"
+					/>
+
+					<Grid
+						Padding="10,0,10,0">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="15" />
+						</Grid.ColumnDefinitions>
+
+						<Slider
+							x:Name="sliderGravity"
+							Grid.Column="0"
+							Minimum="0"
+							Maximum="1.6"
+							Value="1.045"
+						/>
+
+						<Label 
+							x:Name="lblGravity"
+							Text="1.045"
+							FontSize="10"
+							TextColor="White"
+							Grid.Column="1"
+							TranslationY="10"
+						/>
+
+						<Image
+							x:Name="imgBellThreholdGravity"
+							Source="bell_image.png"
+							WidthRequest="13"
+							HeightRequest="24"
+							Grid.Column="2"
+						/>
+
+					</Grid>
+				</StackLayout>
+
+				<StackLayout>
+					<Label 
+						Text="Threshold Alcohol"
+						FontSize="12"
+						FontAttributes="Bold"
+						TextColor="White"
+						TranslationX="10"
+					/>
+
+					<Grid
+						Padding="10,0,10,0">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="35" />
+							<ColumnDefinition Width="15" />
+						</Grid.ColumnDefinitions>
+
+						<Slider
+							Grid.Column="0"
+							x:Name="sliderAlcohol"
+							Minimum="0"
+							Maximum="16"
+							Value="4.8"
+						/>
+
+						<Label 
+							x:Name="lblAlcohol"
+							Text="4.8 %"
+							FontSize="10"
+							TextColor="White"
+							Grid.Column="1"
+							TranslationY="10"
+						/>
+
+						<Image
+							x:Name="imgBellThreholdAlcohol"
+							Source="bell_image.png"
+							WidthRequest="13"
+							HeightRequest="24"
+							Grid.Column="2"
+						/>
+
+					</Grid>
+				</StackLayout>
+
+				<Grid
+					Padding="10"
+					TranslationY="30"
+					HeightRequest="30">
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50*" />
+						<ColumnDefinition Width="50*" />
+					</Grid.ColumnDefinitions>
+
+					<Button
+						Clicked="OnResetButtonClicked"
+						Text="Reset"
+						FontSize="10"
+						TextColor="Black"
+						BackgroundColor="White"
+						Grid.Column="0"
+					/>
+
+					<Button
+						Clicked="OnApplySaveButtonClicked"
+						Text="Apply &amp; Save"
+						FontSize="10"
+						TextColor="Black"
+						BackgroundColor="White"
+						Grid.Column="1"
+					/>
+
+				</Grid>
+
+
+			</StackLayout>
+
+		</Grid>
+	</ScrollView>
+</ContentPage>
