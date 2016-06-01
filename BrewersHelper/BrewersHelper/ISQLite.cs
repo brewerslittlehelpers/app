@@ -8,4 +8,3 @@ namespace BrewersHelper
 		SQLiteConnection GetConnection();
 	}
 }
-

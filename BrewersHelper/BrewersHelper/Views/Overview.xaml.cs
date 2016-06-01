@@ -24,7 +24,8 @@ namespace BrewersHelper.Views
         void Overview_Appearing (object sender, EventArgs e)
         {
 			// read data from model
-			// AlcoholReadingLabel.Text = "35";
+			 AlcoholReadingLabel.Text = "35";
+
         }
 
     }
