@@ -26,12 +26,7 @@ namespace BrewersHelper
 			return (from s in database.Table<SampleModel> ()
 				select s).ToList ();
 		}
-
-		public SampleModel GetSampleTemp()
-		{
-		
-		}
-
+			
 
 		public SampleModel GetSample(int id) 
 		{
