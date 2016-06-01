@@ -14,7 +14,7 @@ namespace BrewersHelper
 		public List<SampleModel> Samples { get; set; }
 
 		[ForeignKey(typeof(DeviceModel))]
-		public int O2MDeviceKey { get; set; }
+		public int O2ODeviceKey { get; set; }
 
 		public string Name { get; set; }
 		public DateTime Time { get; set; }
