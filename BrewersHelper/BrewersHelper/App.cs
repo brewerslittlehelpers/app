@@ -49,8 +49,8 @@ namespace BrewersHelper
             };
 
             Resources = new ResourceDictionary ();
-            Resources.Add(buttonStyle);
-            Resources.Add(labelStyle);
+            //Resources.Add(buttonStyle);
+            //Resources.Add(labelStyle);
 
             var nav = new NavigationService();
             nav.Configure(Locator.Menu, typeof(Menu));
