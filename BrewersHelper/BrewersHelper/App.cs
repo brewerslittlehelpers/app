@@ -13,6 +13,13 @@ namespace BrewersHelper
 {
     public class App : Application
     {
+		static SampleDatabase database;
+		public static SampleDatabase Database {
+			get { 
+				database = database ?? new SampleDatabase ();
+				return database;
+			}
+		}
 
         public App()
         {
@@ -47,10 +54,12 @@ namespace BrewersHelper
                     //new Setter { Property = Label.MarginProperty, Value = 10 }
                 }
             };
-
+					
             Resources = new ResourceDictionary ();
             Resources.Add(buttonStyle);
             Resources.Add(labelStyle);
+
+			Resources.Add ("Blue", Color.FromHex("#2d3e50"));
 
             var nav = new NavigationService();
             nav.Configure(Locator.Menu, typeof(Menu));

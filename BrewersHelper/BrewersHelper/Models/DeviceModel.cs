@@ -7,11 +7,13 @@ namespace BrewersHelper
 {
 	public class DeviceModel
 	{
+		public string Name { get; set; }
+
 		[PrimaryKey, AutoIncrement]
 		public int Id { get; }
 
-		[OneToMany("O2MDeviceKey", "DeviceModelsInverse")]
-		public List<BatchModel> Batches { get; set; }
+		[OneToOne("O2ODeviceKey", "DeviceModelsInverse")]
+		public BatchModel Batch { get; set; }
 	}
 }
 

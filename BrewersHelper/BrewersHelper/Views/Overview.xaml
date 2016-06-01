@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BrewersHelper.Views.Overview">
+             x:Class="BrewersHelper.Views.Overview"
+             BackgroundColor="#2d3e50">
 		<StackLayout VerticalOptions="Start">
 			<Grid>
 				<Grid.RowDefinitions>
-					<RowDefinition Height="1*"/>
-					<RowDefinition Height="1*"/>
-					<RowDefinition Height="1*"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="100"/>
 				</Grid.RowDefinitions>
+
+<!--				<Grid.ColumnDefinition>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="100" />
+				</Grid.ColumnDefinition>-->
 
 			</Grid>
 
