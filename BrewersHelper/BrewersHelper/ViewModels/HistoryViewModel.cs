@@ -34,13 +34,11 @@ namespace BrewersHelper.ViewModels
         public HistoryViewModel(INavigationService navigationService)
         {
             _navigationservice = navigationService;
-
+			Test = "test";
             CompareButtonLabel = "Compare";
             CompareButtonCommand = new Command(() =>
             _navigationservice.NavigateTo(Locator.Compare));
-<<<<<<< 53868fe22bab285edcc84ce7438291a22be9ecf9
-        }
-=======
+
 
 			batches = new string[3] {"Matt", "Joanne", "Robert"};
         }
@@ -50,8 +48,5 @@ namespace BrewersHelper.ViewModels
 			get { return test; }
 			set { test = value; }
 		}
-		
-
->>>>>>> Minor changes
     }
 }

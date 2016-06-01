@@ -17,6 +17,7 @@ namespace BrewersHelper.Views
         {
             InitializeComponent();
             BindingContext = new HistoryViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
+			string[] batches = new string[3] {"Matt", "Joanne", "Robert"};
         }
     }
 }

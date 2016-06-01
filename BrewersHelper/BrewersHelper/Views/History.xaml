@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.Views.History">
   <StackLayout>
-<<<<<<< 53868fe22bab285edcc84ce7438291a22be9ecf9
-    <Label Text="This is the history page"/>
-    <Button Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"/>
-=======
     <Label Text="This is the history page" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button FontSize="11" Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"
             VerticalOptions="Center" HorizontalOptions="Center" />
     <Label Text="{Binding Test}" VerticalOptions="Center" HorizontalOptions="Center" />
->>>>>>> Minor changes
   </StackLayout>
 </ContentPage>
