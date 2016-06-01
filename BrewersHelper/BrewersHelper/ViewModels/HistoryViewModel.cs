@@ -15,6 +15,13 @@ namespace BrewersHelper.ViewModels
     {
         INavigationService _navigationservice;
         private string compareButtonLabel;
+		private string test;
+		private string[] batches;
+
+		public string[] Batches
+		{
+			get { return batches; }
+		}
 
         public string CompareButtonLabel
         {
@@ -31,11 +38,9 @@ namespace BrewersHelper.ViewModels
             CompareButtonLabel = "Compare";
             CompareButtonCommand = new Command(() =>
             _navigationservice.NavigateTo(Locator.Compare));
+
+			batches = new string[3] {"Matt", "Joanne", "Robert"};
         }
-
-		public string[] batches = new string[3] {"Matt", "Joanne", "Robert"};
-
-		private string test;
 
 		public string Test
 		{
