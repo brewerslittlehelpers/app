@@ -27,6 +27,12 @@ namespace BrewersHelper
 				select s).ToList ();
 		}
 
+		public SampleModel GetSampleTemp()
+		{
+		
+		}
+
+
 		public SampleModel GetSample(int id) 
 		{
 			return database.Table<SampleModel> ().FirstOrDefault (s => s.Id == id);
