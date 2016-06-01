@@ -2,26 +2,168 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrewersHelper.Views.Overview"
-             BackgroundColor="#2d3e50">
-		<StackLayout VerticalOptions="Start">
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="100"/>
-				</Grid.RowDefinitions>
+             BackgroundColor="#2d3e50"
+             Title="Overview"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:BrewersHelper.ViewModels">
 
-<!--				<Grid.ColumnDefinition>
-					<ColumnDefinition Width="Auto" />
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="100" />
-				</Grid.ColumnDefinition>-->
+       	<ContentPage.Padding>
+       		<OnPlatform x:TypeArguments="Thickness"
+  				iOS="0, 20, 0, 0" />
+       	</ContentPage.Padding>
 
-			</Grid>
+       	<ContentPage.Resources>
+       		<ResourceDictionary>
+       			<Color x:Key="textColor">White</Color>
+       		</ResourceDictionary>
+       	</ContentPage.Resources>
+       				
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
 
-			<Label Text="Reading" x:Name="AlcoholReadingLabel" Grid.Row="0"/>
-			<BoxView Color="Gray" Grid.Row="1"/>
-			<Button Text="Treshhold" Grid.Row="2"/>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<Label Text="Alchohol" 
+				Grid.Row="0" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center" />
+			<Label Text="{Binding AlcoholReadingLabel}" 
+				Grid.Row="0" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"/>
+
+			<Label Text="pH" 
+				Grid.Row="1" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center" />
+			<Label Text="{Binding PHReadingLabel}" 
+				Grid.Row="1" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"/>
+
+			<Label Text="Gravity" 
+				Grid.Row="2" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center" />
+			<Label Text="{Binding GravityReadingLabel}"  
+				Grid.Row="2" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"/>
+
+			<Label Text="Temperature" 
+				Grid.Row="3" 
+				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center" />
+			<Label Text="{Binding TemperatureReadingLabel}" 
+				Grid.Row="3" Grid.Column="0"
+				TextColor="{StaticResource textColor}"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"/>
+
+				<chart:SfChart
+					Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+
+						<chart:SfChart.PrimaryAxis>
+					        <chart:CategoryAxis />
+					      </chart:SfChart.PrimaryAxis>
+
+					      <chart:SfChart.SecondaryAxis>
+					        <chart:NumericalAxis />
+					      </chart:SfChart.SecondaryAxis>
+
+					      <chart:SfChart.Series>
+					      	<chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+					      </chart:SfChart.Series>
+					</chart:SfChart>
+
+			<chart:SfChart 
+				Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+
+					<chart:SfChart.PrimaryAxis>
+				        <chart:CategoryAxis />
+				      </chart:SfChart.PrimaryAxis>
+
+				      <chart:SfChart.SecondaryAxis>
+				        <chart:NumericalAxis />
+				      </chart:SfChart.SecondaryAxis>
+
+				      <chart:SfChart.Series>
+				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				      </chart:SfChart.Series>
+				</chart:SfChart>
+
+			<chart:SfChart 
+				Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+
+					<chart:SfChart.PrimaryAxis>
+				        <chart:CategoryAxis />
+				      </chart:SfChart.PrimaryAxis>
+
+				      <chart:SfChart.SecondaryAxis>
+				        <chart:NumericalAxis />
+				      </chart:SfChart.SecondaryAxis>
+
+				      <chart:SfChart.Series>
+				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				      </chart:SfChart.Series>
+				</chart:SfChart>
+
+			<chart:SfChart
+				Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+
+					<chart:SfChart.PrimaryAxis>
+				        <chart:CategoryAxis />
+				      </chart:SfChart.PrimaryAxis>
+
+				      <chart:SfChart.SecondaryAxis>
+				        <chart:NumericalAxis />
+				      </chart:SfChart.SecondaryAxis>
+
+				      <chart:SfChart.Series>
+				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				      </chart:SfChart.Series>
+				</chart:SfChart>
+
+			<Button Text="{Binding TresholdButtonLabel}" 
+				Command="{Binding TresholdButtonCommand}"
+				Grid.Row="0" Grid.Column="3"/>
+
+			<Button Text="{Binding TresholdButtonLabel}" 
+				Command="{Binding TresholdButtonCommand}"
+				Grid.Row="1" Grid.Column="3" />			
+
+			<Button Text="{Binding TresholdButtonLabel}" 
+				Command="{Binding TresholdButtonCommand}"
+				Grid.Row="2" Grid.Column="3" />
+
+			<Button Text="{Binding TresholdButtonLabel}" 
+				Command="{Binding TresholdButtonCommand}"
+				Grid.Row="3" Grid.Column="3" />
+		</Grid>
+
+
+<!--			<StackLayout VerticalOptions="Start">
+
 
 			<StackLayout Orientation="Horizontal" VerticalOptions="Center">
 				<Label Text="Reading" x:Name="GravityReadingLabel"></Label>
@@ -35,7 +177,7 @@
 	    		<Button FontSize="11" Text="{Binding ReadingsButtonLabel}" Command="{Binding ReadingsButtonCommand}"
 	            VerticalOptions="Center" HorizontalOptions="Center" />
   			</StackLayout>
-		</StackLayout>
+		</StackLayout>-->
 
 
 </ContentPage>

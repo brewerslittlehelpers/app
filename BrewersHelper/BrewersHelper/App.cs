@@ -56,8 +56,8 @@ namespace BrewersHelper
             };
 					
             Resources = new ResourceDictionary ();
-            Resources.Add(buttonStyle);
-            Resources.Add(labelStyle);
+//            Resources.Add(buttonStyle);
+//            Resources.Add(labelStyle);
 
 			Resources.Add ("Blue", Color.FromHex("#2d3e50"));
 

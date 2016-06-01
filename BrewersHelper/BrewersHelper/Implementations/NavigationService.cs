@@ -120,6 +120,8 @@ namespace BrewersHelper.Implementations
         public void Initialize(NavigationPage navigation)
         {
             _navigation = navigation;
+			_navigation.BarBackgroundColor = Color.FromHex ("#2d3e50");
+			_navigation.BarTextColor = Color.White;
         }
     }
 

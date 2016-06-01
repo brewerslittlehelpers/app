@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite.Net;
 
 using Xamarin.Forms;
 
@@ -17,16 +18,6 @@ namespace BrewersHelper.Views
         {
             InitializeComponent();
             BindingContext = new OverviewViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
-
-			this.Appearing += Overview_Appearing;
         }
-
-        void Overview_Appearing (object sender, EventArgs e)
-        {
-			// read data from model
-			 AlcoholReadingLabel.Text = "35";
-
-        }
-
     }
 }
