@@ -12,7 +12,12 @@
   				iOS="0, 20, 0, 0" />
        	</ContentPage.Padding>
 
-		
+       	<ContentPage.Resources>
+       		<ResourceDictionary>
+       			<Color x:Key="textColor">White</Color>
+       		</ResourceDictionary>
+       	</ContentPage.Resources>
+       				
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="1*"/>
@@ -31,43 +36,47 @@
 			<Label Text="Alchohol" 
 				Grid.Row="0" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center" />
-			<Label Text="Reading" 
-				x:Name="AlcoholReadingLabel" 
+			<Label Text="{Binding AlcoholReadingLabel}" 
 				Grid.Row="0" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center"
 				VerticalTextAlignment="Center"/>
 
 			<Label Text="pH" 
 				Grid.Row="1" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center" />
-			<Label Text="Reading" 
-				x:Name="PHReadingLabel" 
+			<Label Text="{Binding PHReadingLabel}" 
 				Grid.Row="1" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center"
 				VerticalTextAlignment="Center"/>
 
 			<Label Text="Gravity" 
 				Grid.Row="2" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center" />
-			<Label Text="Reading" 
-				x:Name="GravityReadingLabel" 
+			<Label Text="{Binding GravityReadingLabel}"  
 				Grid.Row="2" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center"
 				VerticalTextAlignment="Center"/>
 
 			<Label Text="Temperature" 
 				Grid.Row="3" 
 				Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center" />
-			<Label Text="Reading" 
-				x:Name="TemperatureReadingLabel" 
+			<Label Text="{Binding TemperatureReadingLabel}" 
 				Grid.Row="3" Grid.Column="0"
+				TextColor="{StaticResource textColor}"
 				HorizontalTextAlignment="Center"
 				VerticalTextAlignment="Center"/>
 

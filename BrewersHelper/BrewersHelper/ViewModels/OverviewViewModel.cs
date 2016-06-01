@@ -16,24 +16,24 @@ namespace BrewersHelper.ViewModels
     class OverviewViewModel : ViewModelBase
     {
         INavigationService _navigationservice;
-        private string readingsButtonLabel;
-		private string tresholdButtonLabel;
+
+		// Labels
+
+		public string ReadingsButtonLabel { get; private set; }
+		public string TresholdButtonLabel { get; private set; }
+
+		public string AlcoholReadingLabel { get; private set; }
+		public string TemperatureReadingLabel { get; private set; }
+		public string GravityReadingLabel { get; private set; }
+		public string PHReadingLabel { get; private set; }
+
+		// Temp collections
 
 		public ObservableCollection<ChartDataPoint> Batch3 { get; set; }
 
-        public string ReadingsButtonLabel
-        {
-            get { return readingsButtonLabel; }
-            set { readingsButtonLabel = value; }
-        }
-
-		public string TresholdButtonLabel {
-			get { return tresholdButtonLabel; }
-			set { tresholdButtonLabel = value; }
-		}
+		// Commands
 
 		public ICommand TresholdButtonCommand { get; private set;}
-
         public ICommand ReadingsButtonCommand { get; private set; }
 
         public OverviewViewModel(INavigationService navigationService)
@@ -49,6 +49,15 @@ namespace BrewersHelper.ViewModels
 			TresholdButtonLabel = "Treshold";
 			TresholdButtonCommand = new Command(() =>
 			_navigationservice.NavigateTo (Locator.Thresholds));
+
+
+			// Reading labels
+			// TODO get from database
+
+			AlcoholReadingLabel = "4%";
+			GravityReadingLabel = "1.022";
+			TemperatureReadingLabel = "17°C";
+			PHReadingLabel = "4.2";
 
 			Batch3 = new ObservableCollection<ChartDataPoint>();
 			Batch3.Add(new ChartDataPoint("1", 1.054));
