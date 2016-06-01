@@ -18,9 +18,10 @@ namespace BrewersHelper.iOS
 		public SQLite.Net.SQLiteConnection GetConnection ()
 		{
 			var fileName = "SampleDatabase.db3";
-			var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-			var libraryPath = Path.Combine (documentsPath, "..", "Library");
-			var path = Path.Combine (libraryPath, fileName);
+//			var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
+//			var libraryPath = Path.Combine (documentsPath, "..", "Library");
+//			var path = Path.Combine (libraryPath, fileName);
+			var path = Path.Combine("/BrewersHelper", fileName);
 
 			var platform = new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS ();
 			var connection = new SQLite.Net.SQLiteConnection (platform, path);

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite.Net;
 
 using Xamarin.Forms;
 
@@ -26,7 +27,12 @@ namespace BrewersHelper.Views
 			// read data from model
 			 AlcoholReadingLabel.Text = "35";
 
-        }
+//			var db = new SampleDatabase ();
+//			App.Database.GetSample(1);
 
+//			SampleModel s = App.Database.GetSample(1);
+//			AlcoholReadingLabel.Text = String.Format("{0}", s.Alcohol);
+
+		}
     }
 }
