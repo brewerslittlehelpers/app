@@ -5,12 +5,14 @@ namespace BrewersHelper
 	public class Helper
 	{
 		public string HelperName{ get; set; }
-		public int Percent;
+		public double Progress{ get; set; }
+		public string BatteryPercent{ get; set; }
 
-		public Helper (string helperName, int percent)
+		public Helper (string helperName, double progress, string batteryPercent)
 		{
 			HelperName = helperName;
-			Percent = percent;
+			Progress = progress;
+			BatteryPercent = batteryPercent;
 		}
 	}
 }

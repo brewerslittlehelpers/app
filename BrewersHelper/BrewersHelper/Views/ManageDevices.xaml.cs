@@ -30,9 +30,9 @@ namespace BrewersHelper.Views
 
 		public void OnDelete (object sender, EventArgs e) {
 
-			/*var item = (Xamarin.Forms.Button)sender;  
-			Item listitem = (from itm in allItems 
-				where itm.ItemName == item.CommandParameter.ToString() 
+			/*var helper = (Xamarin.Forms.Button)sender;  
+			Helper listitem = (from helper1 in HelperList 
+				where helper1 == helper.CommandParameter.ToString() 
 				select itm)
 				.FirstOrDefault<Item>();  
 			allItems.Remove(listitem);*/
