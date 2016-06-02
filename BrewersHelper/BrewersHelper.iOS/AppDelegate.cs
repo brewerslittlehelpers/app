@@ -23,6 +23,12 @@ namespace BrewersHelper.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+			// bugfix!
+
+			Xamarin.Forms.DependencyService.Register<SQLite_iOS>();
+
+			// the rest
+
             new SfChartRenderer();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

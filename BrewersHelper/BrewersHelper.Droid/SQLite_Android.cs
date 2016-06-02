@@ -2,6 +2,7 @@
 using System.IO;
 using Xamarin.Forms;
 using BrewersHelper.Android;
+using BrewersHelper.Data;
 
 [assembly: Dependency(typeof(SQLite_Android))]
 

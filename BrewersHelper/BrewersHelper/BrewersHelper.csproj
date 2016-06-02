@@ -74,8 +74,9 @@
       <DependentUpon>SetTimer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\SampleDatabase.cs" />
-    <Compile Include="ISQLite.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
+    <Compile Include="Models\Sample.cs" />
+    <Compile Include="Data\ISQLite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616">
