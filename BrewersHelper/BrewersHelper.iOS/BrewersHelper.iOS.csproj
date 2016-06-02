@@ -99,12 +99,6 @@
     <None Include="Resources\SampleDatabase.db3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrewersHelper\BrewersHelper.csproj">
-      <Name>BrewersHelper</Name>
-      <Project>{B352B536-52E9-4D7F-A017-26E11B39565B}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Default-Portrait.png" />
     <BundleResource Include="Resources\Default-Portrait%402x.png" />
@@ -196,4 +190,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\BrewersHelper\BrewersHelper.csproj">
+      <Project>{B352B536-52E9-4D7F-A017-26E11B39565B}</Project>
+      <Name>BrewersHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

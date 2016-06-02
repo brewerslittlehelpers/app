@@ -186,6 +186,9 @@ namespace BrewersHelper.Data
 
 		public void AddBatch(string name, bool completed, int device)
 		{
+
+			// TODO make sure data is not duplicated
+
 			var newBatch = new BatchModel() { 
 				Name = name,
 				Time = DateTime.Now,

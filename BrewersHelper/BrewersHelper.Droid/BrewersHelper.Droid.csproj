@@ -135,12 +135,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrewersHelper\BrewersHelper.csproj">
-      <Name>BrewersHelper</Name>
-      <Project>{B352B536-52E9-4D7F-A017-26E11B39565B}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\cup_image.png" />
   </ItemGroup>
   <ItemGroup>
@@ -189,4 +183,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\BrewersHelper\BrewersHelper.csproj">
+      <Project>{B352B536-52E9-4D7F-A017-26E11B39565B}</Project>
+      <Name>BrewersHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
