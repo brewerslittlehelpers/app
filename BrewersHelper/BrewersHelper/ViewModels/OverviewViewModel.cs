@@ -19,7 +19,6 @@ namespace BrewersHelper.ViewModels
 
 		// Labels
 
-		public string ReadingsButtonLabel { get; private set; }
 		public string TresholdButtonLabel { get; private set; }
 
 		public string AlcoholReadingLabel { get; private set; }
@@ -37,16 +36,10 @@ namespace BrewersHelper.ViewModels
 		// Commands
 
 		public ICommand TresholdButtonCommand { get; private set;}
-        public ICommand ReadingsButtonCommand { get; private set; }
 
         public OverviewViewModel(INavigationService navigationService)
         {
             _navigationservice = navigationService;
-
-			// Set readings button
-            ReadingsButtonLabel = "Readings";
-            ReadingsButtonCommand = new Command(() =>
-            _navigationservice.NavigateTo(Locator.Readings));
 
 			// Set treshhold button
 			TresholdButtonLabel = "Treshold";

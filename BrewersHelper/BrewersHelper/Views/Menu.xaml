@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="BrewersHelper.Views.Menu" BackgroundColor="#2d3e50">
   
-		<!-- MAIN CONTAINER -->
 		<Grid
 			ColumnSpacing="0" 
 			RowSpacing="0" 
@@ -35,8 +34,8 @@
 
 				<Image
 					Source="bee_image.png"
-					WidthRequest="105"
-					HeightRequest="55"
+					WidthRequest="110"
+					HeightRequest="65"
 					HorizontalOptions="Start"
 					TranslationX="15"
 					TranslationY="5"
@@ -89,7 +88,11 @@
 			<StackLayout
         Grid.Column="2">
         
-        <Label Text="Pale: Batch 4" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+        <Label 
+          Text="{Binding CurrentBatchLabel}" 
+          HorizontalOptions="Center" 
+          FontAttributes="Bold" 
+          FontSize="16"/>
         
       <Image
 					Source="gravity1.png"
@@ -99,7 +102,7 @@
 					TranslationY="5"
 				/>
         
-        <Label Text="Specific Gravity" HorizontalOptions="Center"/>
+        <Label Text="{Binding SpecificGravityDialLabel}" HorizontalOptions="Center"/>
         
       <Image
 					Source="temp1.png"
@@ -109,7 +112,7 @@
 					TranslationY="5"
 				/>
         
-        <Label Text="Temperature" HorizontalOptions="Center"/>
+        <Label Text="{Binding TempDialLabel}" HorizontalOptions="Center"/>
         
         <Image
 					Source="alcohol1.png"
@@ -119,7 +122,7 @@
 					TranslationY="5"
 				/>
         
-      <Label Text="Alcohol" HorizontalOptions="Center"/>
+      <Label Text="{Binding AlcoholDialLabel}" HorizontalOptions="Center"/>
       
 			</StackLayout>
 
@@ -151,52 +154,5 @@
       </StackLayout>
       
 		</Grid>
-  
-
-  
-  <!--<StackLayout VerticalOptions="Start">
-    <Image
-					Source="home_image.png"
-					WidthRequest="30"
-					HeightRequest="30"
-					HorizontalOptions="Start"
-					TranslationX="5"
-				/>
-
-				<Image
-					Source="bee_image.png"
-					WidthRequest="105"
-					HeightRequest="55"
-					HorizontalOptions="Start"
-					TranslationX="15"
-					TranslationY="5"
-				/>
-
-				<Image
-					Source="cup_image.png"
-					WidthRequest="105"
-					HeightRequest="112"
-					HorizontalOptions="Start"
-					TranslationY="10"
-				/>
-    </StackLayout>
-
-  <StackLayout VerticalOptions="End"> 
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*" />
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="0.25*" />
-        <ColumnDefinition Width="0.25*" />
-        <ColumnDefinition Width="0.25*" />
-        <ColumnDefinition Width="0.25*" />
-      </Grid.ColumnDefinitions>
-      <Button Text="{Binding OverviewButtonLabel}" Command="{Binding OverviewButtonCommand}" Grid.Column ="0"/>
-      <Button Text="{Binding ManageDevicesButtonLabel}" Command="{Binding ManageDevicesButtonCommand}" Grid.Column ="1"/>
-      <Button Text="{Binding ThresholdsButtonLabel}" Command="{Binding ThresholdsButtonCommand}" Grid.Column ="2"/>
-      <Button Text="{Binding HistoryButtonLabel}" Command="{Binding HistoryButtonCommand}" Grid.Column ="3"/>
-    </Grid>
-  </StackLayout>-->
   
 </ContentPage>

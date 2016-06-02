@@ -44,7 +44,6 @@
     <Compile Include="ViewModels\ManageDevicesViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\OverviewViewModel.cs" />
-    <Compile Include="ViewModels\ReadingsViewModel.cs" />
     <Compile Include="ViewModels\ThresholdsViewModel.cs" />
     <Compile Include="Views\Compare.xaml.cs">
       <DependentUpon>Compare.xaml</DependentUpon>
@@ -61,9 +60,6 @@
     <Compile Include="Views\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Readings.xaml.cs">
-      <DependentUpon>Readings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Thresholds.xaml.cs">
       <DependentUpon>Thresholds.xaml</DependentUpon>
     </Compile>
@@ -75,8 +71,12 @@
     </Compile>
     <Compile Include="Data\SampleDatabase.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Sample.cs" />
     <Compile Include="Data\ISQLite.cs" />
+=======
+    <Compile Include="Views\Helper.cs" />
+>>>>>>> fcfb4548b310c7389f4ac38cb8c527cf4761cb7a
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616">
@@ -155,12 +155,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Readings.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -178,7 +172,5 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

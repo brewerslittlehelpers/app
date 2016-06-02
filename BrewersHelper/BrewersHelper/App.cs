@@ -69,7 +69,6 @@ namespace BrewersHelper
             nav.Configure(Locator.Menu, typeof(Menu));
             nav.Configure(Locator.Overview, typeof(Overview));
             nav.Configure(Locator.History, typeof(History));
-            nav.Configure(Locator.Readings, typeof(Readings));
             nav.Configure(Locator.ManageDevices, typeof(ManageDevices));
             nav.Configure(Locator.Thresholds, typeof(Thresholds));
             nav.Configure(Locator.Compare, typeof(Compare));
