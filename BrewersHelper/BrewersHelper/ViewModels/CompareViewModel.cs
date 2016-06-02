@@ -12,26 +12,50 @@ namespace BrewersHelper.ViewModels
 {
     class CompareViewModel : ViewModelBase
     {
-        private string brewOne;
-        private string brewTwo;
+        private string _brewOne;
+        private string _brewTwo;
+        private string _chartTitle;
+        private string _primaryAxisTitle;
+        private string _secondaryAxisTitle;
+
+        public string SecondaryAxisTitle
+        {
+            get { return _secondaryAxisTitle; }
+            set { _secondaryAxisTitle = value; RaisePropertyChanged(() => SecondaryAxisTitle); }
+        }
+
+        public string PrimaryAxisTitle
+        {
+            get { return _primaryAxisTitle; }
+            set { _primaryAxisTitle = value; RaisePropertyChanged(() => PrimaryAxisTitle); }
+        }
+
+        public string ChartTitle
+        {
+            get { return _chartTitle; }
+            set { _chartTitle = value; RaisePropertyChanged(() => ChartTitle); }
+        }
 
         public string BrewOne
         {
-            get { return brewOne; }
-            set { brewOne = value; RaisePropertyChanged(() => BrewOne); }
+            get { return _brewOne; }
+            set { _brewOne = value; RaisePropertyChanged(() => BrewOne); }
         }
 
         public string BrewTwo
         {
-            get { return brewTwo; }
-            set { brewTwo = value; RaisePropertyChanged(() => BrewTwo); }
+            get { return _brewTwo; }
+            set { _brewTwo = value; RaisePropertyChanged(() => BrewTwo); }
         }
 
-        public ObservableCollection<ChartDataPoint> Batch3 { get; set; }
-        public ObservableCollection<ChartDataPoint> Batch5 { get; set; }
+        public ObservableCollection<ChartDataPoint> Batch3 { get; private set; }
+        public ObservableCollection<ChartDataPoint> Batch5 { get; private set; }
 
         public CompareViewModel(INavigationService navigationService)
         {
+            ChartTitle = "Brew Comparison";
+            PrimaryAxisTitle = "Days";
+            SecondaryAxisTitle = "Specific Gravity";
             BrewOne = "Tims Pale Batch 3";
             BrewTwo = "Tims Pale Batch 5";
 
