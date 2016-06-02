@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BrewersHelper.Data;
+using System.Diagnostics;
 
 using Xamarin.Forms;
 
@@ -14,15 +16,20 @@ namespace BrewersHelper
     public class App : Application
     {
 		static SampleDatabase database;
+
 		public static SampleDatabase Database {
 			get { 
-				database = database ?? new SampleDatabase ();
+				if (database == null) {
+					database = new SampleDatabase();
+				}
 				return database;
 			}
 		}
 
         public App()
         {
+//			Database = new SampleDatabase ();
+
             var buttonStyle = new Style(typeof(Button))
             {
                 Setters =

@@ -12,7 +12,7 @@ namespace BrewersHelper
 		[ForeignKey(typeof(BatchModel))]
 		public int O2MBatchKey { get; set; }
 
-		public string Time { get; set; }
+		public DateTime Time { get; set; }
 		public double Temp { get; set; }
 		public double Alcohol { get; set; }
 		public double Gravity { get; set; }

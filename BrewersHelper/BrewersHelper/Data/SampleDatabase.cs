@@ -1,30 +1,94 @@
 ﻿using System;
-//using SQLite;
 using SQLite.Net;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 
 
-namespace BrewersHelper
+namespace BrewersHelper.Data
 {
 	public class SampleDatabase
 	{
-		
+
+//		public List<SampleModel> Samples { get; set; }
+//		public List<BatchModel> Batches { get; set; }
+//		public List<DeviceModel> Devices { get; set; }
+
 		SQLiteConnection database;
 
 		public SampleDatabase ()
 		{
-//			createDatabase ();
+			// hack
+
+//			Samples = new List<SampleModel>();
 
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
-			// create tables
+
+//			// create tables
+
 			database.CreateTable<SampleModel> ();
 			database.CreateTable<DeviceModel> ();
 			database.CreateTable<BatchModel> ();
 
+			createDatabase ();
+
+			// Devices
+
+//			Devices.Add(new DeviceModel() {
+//				Name = "My first device"
+//			});
+//
+//			// Batches
+//
+//			Batches.Add(new BatchModel() { 
+//				Name = "Tims Mighty Hop",
+////				O2ODeviceKey = 1,
+//				Time = DateTime.Now,
+//				IsCompleted = false
+//			});
+//
+//			Batches.Add(new BatchModel() { 
+//				Name = "Haavards Ale",
+////				O2ODeviceKey = 1,
+//				Time = DateTime.Now,
+//				IsCompleted = false
+//			});
+//
+//			Batches.Add(new BatchModel() { 
+//				Name = "CKs Disaster Porter",
+////				O2ODeviceKey = 1,
+//				Time = DateTime.Now,
+//				IsCompleted = true
+//			});
+
+			// Samples
+
+			// Batch 1
+//			AddSample (18.0, 0.0, 6.0, 1.054, "2016-05-15 06:00:00.000", 1);
+
+//			Samples.Add(new SampleModel () {
+//				O2MBatchKey = 1,
+//				Time = Convert.ToDateTime("2016-05-15 06:00:00.000"),
+//				Temp = 18.0,
+//				Alcohol = 0.0,
+//				Gravity = 1.054,
+//				PH = 6.0
+//			});
+//
+//			Samples.Add(new SampleModel() {
+//				O2MBatchKey = 1,
+//				Time = Convert.ToDateTime("2016-05-16 06:00:00.000"),
+//				Temp = 17.9,
+//				Alcohol = 0.1,
+//				Gravity = 1.053,
+//				PH = 5.9
+//			});
+
+			// Batch 2
+
+			// Batch 3
+
 		}
-			
 
 		public IEnumerable<SampleModel> GetSamples() 
 		{
@@ -82,24 +146,29 @@ namespace BrewersHelper
 		}
 
 
-		public SampleModel GetSample(int id) 
-		{
-			return database.Table<SampleModel> ().FirstOrDefault (s => s.Id == id);
-		}
-
-		public void DeleteSample(int id) 
-		{
-			database.Delete<SampleModel> (id);
-		}
-
+//		public SampleModel GetSample(int id) 
+//		{
+//			return database.Table<SampleModel> ().FirstOrDefault (s => s.Id == id);
+//		}
+//
+//		public BatchModel GetBatch(int id) 
+//		{
+//			return database.Table<BatchModel> ().FirstOrDefault (s => s.Id == id);
+//		}
+//
+//		public void DeleteSample(int id) 
+//		{
+//			database.Delete<SampleModel> (id);
+//		}
+//
 		public void AddSample(double temp, double alcohol, double ph, double gravity, string time, int batchid) 
 		{
-			var newSample = new SampleModel {
+			var newSample = new SampleModel() {
 				Temp = temp,
 				Alcohol = alcohol,
 				PH = ph,
 				Gravity = gravity,
-				Time = time,
+				Time = Convert.ToDateTime(time),
 				O2MBatchKey = batchid
 			};
 
@@ -108,7 +177,7 @@ namespace BrewersHelper
 
 		public int AddDevice(string name)
 		{
-			var newDevice = new DeviceModel { 
+			var newDevice = new DeviceModel() { 
 				Name = name
 			};
 			return database.Insert (newDevice);
@@ -116,7 +185,7 @@ namespace BrewersHelper
 
 		public void AddBatch(string name, bool completed, int device)
 		{
-			var newBatch = new BatchModel { 
+			var newBatch = new BatchModel() { 
 				Name = name,
 				Time = DateTime.Now,
 				IsCompleted = completed,

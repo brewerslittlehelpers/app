@@ -29,7 +29,10 @@ namespace BrewersHelper.ViewModels
 
 		// Temp collections
 
-		public ObservableCollection<ChartDataPoint> Batch3 { get; set; }
+		public ObservableCollection<ChartDataPoint> AlcoholGraph { get; set; }
+		public ObservableCollection<ChartDataPoint> PHGraph { get; set; }
+		public ObservableCollection<ChartDataPoint> GravityGraph { get; set; }
+		public ObservableCollection<ChartDataPoint> TemperatureGraph { get; set; }
 
 		// Commands
 
@@ -52,28 +55,42 @@ namespace BrewersHelper.ViewModels
 
 
 			// Reading labels
-			// TODO get from database
 
-			AlcoholReadingLabel = "4%";
-			GravityReadingLabel = "1.022";
-			TemperatureReadingLabel = "17°C";
-			PHReadingLabel = "4.2";
+			List<SampleModel> samples = App.Database.GetSamples().ToList();
 
-			Batch3 = new ObservableCollection<ChartDataPoint>();
-			Batch3.Add(new ChartDataPoint("1", 1.054));
-			Batch3.Add(new ChartDataPoint("2", 1.053));
-			Batch3.Add(new ChartDataPoint("3", 1.048));
-			Batch3.Add(new ChartDataPoint("4", 1.041));
-			Batch3.Add(new ChartDataPoint("5", 1.032));
-			Batch3.Add(new ChartDataPoint("6", 1.021));
-			Batch3.Add(new ChartDataPoint("7", 1.018));
-			Batch3.Add(new ChartDataPoint("8", 1.015));
-			Batch3.Add(new ChartDataPoint("9", 1.011));
-			Batch3.Add(new ChartDataPoint("10", 1.010));
-			Batch3.Add(new ChartDataPoint("11", 1.010));
-			Batch3.Add(new ChartDataPoint("12", 1.010));
-			Batch3.Add(new ChartDataPoint("", 1.010));
+			double alcoholReading = samples.Last().Alcohol;
 
+
+			// hacky way of doing this
+			int currentBatch = 1;
+			List<SampleModel> currentBatchSamples = new List<SampleModel>();
+
+			foreach (SampleModel s in samples)
+			{
+				if (s.O2MBatchKey == currentBatch) {
+					currentBatchSamples.Add (s);
+				}
+			}
+
+			AlcoholGraph = new ObservableCollection<ChartDataPoint>();
+			PHGraph = new ObservableCollection<ChartDataPoint>();
+			GravityGraph = new ObservableCollection<ChartDataPoint>();
+			TemperatureGraph = new ObservableCollection<ChartDataPoint>();
+
+
+			foreach (SampleModel s in currentBatchSamples){
+				AlcoholGraph.Add (new ChartDataPoint(s.Time, s.Alcohol));
+				PHGraph.Add (new ChartDataPoint(s.Time, s.PH));
+				GravityGraph.Add (new ChartDataPoint(s.Time, s.Gravity));
+				TemperatureGraph.Add (new ChartDataPoint(s.Time, s.Temp));
+			}
+
+			SampleModel lastSampleFromBatch = currentBatchSamples.Last ();
+
+			AlcoholReadingLabel = String.Format("{0}%", lastSampleFromBatch.Alcohol);
+			GravityReadingLabel = String.Format("{0}", lastSampleFromBatch.Gravity);
+			TemperatureReadingLabel = String.Format("{0}°C", lastSampleFromBatch.Temp);
+			PHReadingLabel = String.Format("{0}", lastSampleFromBatch.PH);
         }
     }
 }

@@ -92,7 +92,7 @@
 					      </chart:SfChart.SecondaryAxis>
 
 					      <chart:SfChart.Series>
-					      	<chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+					      	<chart:SplineSeries  Label = "Alcohol" ItemsSource = "{Binding AlcoholGraph}"/>
 					      </chart:SfChart.Series>
 					</chart:SfChart>
 
@@ -108,7 +108,7 @@
 				      </chart:SfChart.SecondaryAxis>
 
 				      <chart:SfChart.Series>
-				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				        <chart:SplineSeries  Label = "pH" ItemsSource = "{Binding PHGraph}"/>
 				      </chart:SfChart.Series>
 				</chart:SfChart>
 
@@ -124,7 +124,7 @@
 				      </chart:SfChart.SecondaryAxis>
 
 				      <chart:SfChart.Series>
-				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				        <chart:SplineSeries  Label = "Gravity" ItemsSource = "{Binding GravityGraph}"/>
 				      </chart:SfChart.Series>
 				</chart:SfChart>
 
@@ -140,7 +140,7 @@
 				      </chart:SfChart.SecondaryAxis>
 
 				      <chart:SfChart.Series>
-				        <chart:SplineSeries  Label = "Label" ItemsSource = "{Binding Batch3}"/>
+				        <chart:SplineSeries  Label = "Temperature" ItemsSource = "{Binding TemperatureGraph}"/>
 				      </chart:SfChart.Series>
 				</chart:SfChart>
 

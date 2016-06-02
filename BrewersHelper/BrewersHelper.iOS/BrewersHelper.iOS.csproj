@@ -96,6 +96,7 @@
     <None Include="packages.config" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
     <Compile Include="SQLite_iOS.cs" />
+    <None Include="Resources\SampleDatabase.db3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrewersHelper\BrewersHelper.csproj">

@@ -1,7 +1,7 @@
 ﻿using System;
 using SQLite.Net;
 
-namespace BrewersHelper
+namespace BrewersHelper.Data
 {
 	public interface ISQLite
 	{
