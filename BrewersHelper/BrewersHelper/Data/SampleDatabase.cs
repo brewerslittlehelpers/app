@@ -95,7 +95,7 @@ namespace BrewersHelper.Data
 			return (from s in database.Table<SampleModel> ()
 				select s).ToList ();
 		}
-
+			
 		private void createDatabase()
 		{
 			AddDevice ("First device");
@@ -161,6 +161,7 @@ namespace BrewersHelper.Data
 //			database.Delete<SampleModel> (id);
 //		}
 //
+
 		public void AddSample(double temp, double alcohol, double ph, double gravity, string time, int batchid) 
 		{
 			var newSample = new SampleModel() {
