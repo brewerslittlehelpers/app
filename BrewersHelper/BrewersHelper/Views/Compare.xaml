@@ -6,13 +6,13 @@
     <chart:SfChart>
 
       <chart:SfChart.Title>
-        <chart:ChartTitle Text="Brew Comparison"/>
+        <chart:ChartTitle Text="{Binding ChartTitle}"/>
       </chart:SfChart.Title>
 
       <chart:SfChart.PrimaryAxis>
         <chart:CategoryAxis>
           <chart:CategoryAxis.Title>
-            <chart:ChartAxisTitle Text="Days"/>
+            <chart:ChartAxisTitle Text="{Binding PrimaryAxisTitle}"/>
           </chart:CategoryAxis.Title>
         </chart:CategoryAxis>
       </chart:SfChart.PrimaryAxis>
@@ -20,7 +20,7 @@
       <chart:SfChart.SecondaryAxis>
         <chart:NumericalAxis>
           <chart:NumericalAxis.Title>
-            <chart:ChartAxisTitle Text="Specific Gravity"/>
+            <chart:ChartAxisTitle Text="{Binding SecondaryAxisTitle}"/>
           </chart:NumericalAxis.Title>
         </chart:NumericalAxis>
       </chart:SfChart.SecondaryAxis>

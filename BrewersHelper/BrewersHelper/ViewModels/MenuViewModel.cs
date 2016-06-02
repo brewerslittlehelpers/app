@@ -15,49 +15,61 @@ namespace BrewersHelper.ViewModels
     class MenuViewModel : ViewModelBase
     {
         INavigationService _navigationservice;
-        private string overviewButtonLabel;
-        private string historyButtonLabel;
-        private string thresholdsButtonLabel;
-        private string manageDevicesButtonLabel;
+        private string _overviewButtonLabel;
+        private string _historyButtonLabel;
+        private string _thresholdsButtonLabel;
+        private string _manageDevicesButtonLabel;
+        private string _specificGravityDialLabel;
+        private string _currentBatchLabel;
+        private string _tempDialLabel;
+        private string _alcoholDialLabel;
+
+        public string AlcoholDialLabel
+        {
+            get { return _alcoholDialLabel; }
+            set { _alcoholDialLabel = value; }
+        }
+
+        public string TempDialLabel
+        {
+            get { return _tempDialLabel; }
+            set { _tempDialLabel = value; }
+        }
+
+        public string CurrentBatchLabel
+        {
+            get { return _currentBatchLabel; }
+            set { _currentBatchLabel = value; }
+        }
+
+        public string SpecificGravityDialLabel
+        {
+            get { return _specificGravityDialLabel; }
+            set { _specificGravityDialLabel = value; }
+        }
 
         public string ManageDevicesButtonLabel
         {
-            get { return manageDevicesButtonLabel; }
-            set
-            {
-                manageDevicesButtonLabel = value;
-                RaisePropertyChanged(() => ManageDevicesButtonLabel);
-            }
+            get { return _manageDevicesButtonLabel; }
+            set { _manageDevicesButtonLabel = value; }
         }
 
         public string ThresholdsButtonLabel
         {
-            get { return thresholdsButtonLabel; }
-            set
-            {
-                thresholdsButtonLabel = value;
-                RaisePropertyChanged(() => ThresholdsButtonLabel);
-            }
+            get { return _thresholdsButtonLabel; }
+            set { _thresholdsButtonLabel = value; }
         }
 
         public string HistoryButtonLabel
         {
-            get { return historyButtonLabel; }
-            set
-            {
-                historyButtonLabel = value;
-                RaisePropertyChanged(() => HistoryButtonLabel);
-            }
+            get { return _historyButtonLabel; }
+            set { _historyButtonLabel = value; }
         }
 
         public string OverviewButtonLabel
         {
-            get { return overviewButtonLabel; }
-            set
-            {
-                overviewButtonLabel = value;
-                RaisePropertyChanged(() => OverviewButtonLabel);
-            }
+            get { return _overviewButtonLabel; }
+            set { _overviewButtonLabel = value; }
         }
 
         public ICommand OverviewButtonCommand { get; private set; }
@@ -68,6 +80,11 @@ namespace BrewersHelper.ViewModels
         public MenuViewModel(INavigationService navigationService)
         {
             _navigationservice = navigationService;
+
+            CurrentBatchLabel = "Tims Pale Ale, Batch 3";
+            SpecificGravityDialLabel = "Specific Gravity";
+            TempDialLabel = "Temperature";
+            AlcoholDialLabel = "Alcohol";
 
             OverviewButtonLabel = "Overview";
             OverviewButtonCommand = new Command(() =>
