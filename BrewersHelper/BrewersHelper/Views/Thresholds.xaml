@@ -1,6 +1,529 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BrewersHelper.Views.Thresholds">
-  <StackLayout>
-    <Label Text="This is the thresholds page"/>
-  </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BrewersHelper.Views.Thresholds"
+             xmlns:commonViews="clr-namespace:BrewersHelper.UserControls;assembly=BrewersHelper"
+             BackgroundColor="#2d3e50">
+  <Grid
+		HorizontalOptions="Fill"
+		VerticalOptions="FillAndExpand">
+    <ScrollView>
+      <!-- MAIN CONTAINER -->
+      <Grid
+				ColumnSpacing="0"
+				RowSpacing="0"
+				Padding="0, 20, 0, 20"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill" >
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="2" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout
+					HorizontalOptions="Fill"
+					VerticalOptions="Fill"
+					Grid.Column="1"
+					BackgroundColor="White"
+				/>
+
+
+
+        <StackLayout
+					Grid.Column="0">
+
+          <Image
+						Source="home_image.png"
+						WidthRequest="30"
+						HeightRequest="30"
+						HorizontalOptions="Start"
+						TranslationX="5"
+					/>
+
+          <Image
+						Source="bee_image.png"
+						WidthRequest="105"
+						HeightRequest="55"
+						HorizontalOptions="Start"
+						TranslationX="15"
+						TranslationY="5"
+					/>
+
+          <Image
+						Source="cup_image.png"
+						WidthRequest="105"
+						HeightRequest="112"
+						HorizontalOptions="Center"
+						TranslationY="10"
+					/>
+
+          <StackLayout
+						HorizontalOptions="Fill"
+						Padding="10,0,10,0"
+						TranslationY="20">
+
+            <BoxView
+							HorizontalOptions="Fill"
+							VerticalOptions="Center"
+							HeightRequest="2"
+							Color="White"/>
+
+          </StackLayout>
+
+          <Grid
+						RowSpacing="10"
+						HorizontalOptions="Fill"
+						Padding="10"
+						TranslationY="40">
+
+            <Grid.RowDefinitions>
+              <RowDefinition Height="20" />
+              <RowDefinition Height="20" />
+              <RowDefinition Height="20" />
+              <RowDefinition Height="5" />
+              <RowDefinition Height="250" />
+            </Grid.RowDefinitions>
+
+            <Label
+							Text="Current Temperature"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="Start"
+							VerticalOptions="Start"
+							Grid.Row="0"
+						/>
+
+            <Label
+							Text="35°C"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="End"
+							VerticalOptions="Start"
+							Grid.Row="0"
+						/>
+
+            <Label
+							Text="Current Gravity"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="Start"
+							VerticalOptions="Start"
+							TranslationX="10"
+							Grid.Row="1"
+						/>
+
+            <Label
+							Text="1.35SG"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="End"
+							VerticalOptions="Start"
+							TranslationX="-10"
+							Grid.Row="1"
+						/>
+
+            <Label
+							Text="Current Alcohol %"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="Start"
+							VerticalOptions="Start"
+							TranslationX="10"
+							Grid.Row="2"
+						/>
+
+            <Label
+							Text="3.5%"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							HorizontalOptions="End"
+							VerticalOptions="Start"
+							TranslationX="-10"
+							Grid.Row="2"
+						/>
+
+            <BoxView
+							HorizontalOptions="Fill"
+							VerticalOptions="Center"
+							HeightRequest="2"
+							Color="White"
+							Grid.Row="3"/>
+
+          </Grid>
+
+
+
+
+        </StackLayout>
+
+        <StackLayout
+					Grid.Column="2"
+					TranslationY="60">
+
+          <StackLayout
+						Padding="10, 10, 20, 10">
+            <Label
+							Text="Process Name"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+						/>
+            <Entry
+							Text=""
+							BackgroundColor="White"
+							TranslationX="10"
+						/>
+          </StackLayout>
+
+          <StackLayout
+						Padding="10, 10, 20, 10">
+            <Label
+							Text="Process Style"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+						/>
+            <Entry
+							Text=""
+							BackgroundColor="White"
+							TranslationX="10"
+						/>
+          </StackLayout>
+
+          <StackLayout>
+
+            <Label
+							Text="Process Duration"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							TranslationX="10"
+						/>
+
+            <Grid
+							Padding="10,0,10,0">
+
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="15" />
+              </Grid.ColumnDefinitions>
+
+              <Slider
+								Value="{Binding ProcessDurationValue, Mode=TwoWay}"
+								Grid.Column="0"
+								Minimum="0"
+								Maximum="100"
+							>
+
+              </Slider>
+
+              <Label
+								Text="{Binding ProcessDurationValue, StringFormat='{0:0} Min'}"
+								FontSize="10"
+								TextColor="White"
+								Grid.Column="1"
+								TranslationY="10"
+							/>
+              <Image
+								Source="bell_image.png"
+								WidthRequest="13"
+								HeightRequest="24"
+								Grid.Column="2">
+
+                <Image.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding TapBellProcessDuration}"/>
+                </Image.GestureRecognizers>
+
+              </Image>
+
+            </Grid>
+          </StackLayout>
+
+          <StackLayout>
+            <Label
+							Text="Threshold Temperature"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							TranslationX="10"
+						/>
+
+            <Grid
+							Padding="10,0,10,0">
+
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="15" />
+              </Grid.ColumnDefinitions>
+
+              <Slider
+								Value="{Binding ThresholdTemperatureValue, Mode=TwoWay}"
+								Grid.Column="0"
+								Minimum="0"
+								Maximum="100"
+							/>
+
+              <Label
+								Text="{Binding ThresholdTemperatureValue, StringFormat='{0:0}°C'}"
+								FontSize="10"
+								TextColor="White"
+								Grid.Column="1"
+								TranslationY="10"
+							/>
+
+              <Image
+								Source="bell_image.png"
+								WidthRequest="13"
+								HeightRequest="24"
+								Grid.Column="2">
+
+                <Image.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding TapBellTemperature}"/>
+                </Image.GestureRecognizers>
+
+              </Image>
+            </Grid>
+          </StackLayout>
+
+          <StackLayout>
+            <Label
+							Text="Threshold Gravity"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							TranslationX="10"
+						/>
+
+            <Grid
+							Padding="10,0,10,0">
+
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="15" />
+              </Grid.ColumnDefinitions>
+
+              <Slider
+								Value="{Binding GravityValue, Mode=TwoWay}"
+								Grid.Column="0"
+								Minimum="0"
+								Maximum="1.6"
+							/>
+
+              <Label
+								Text="{Binding GravityValue, StringFormat='{0:0.000}'}"
+								FontSize="10"
+								TextColor="White"
+								Grid.Column="1"
+								TranslationY="10"
+							/>
+
+              <Image
+								Source="bell_image.png"
+								WidthRequest="13"
+								HeightRequest="24"
+								Grid.Column="2">
+
+                <Image.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding TapBellGravity}"/>
+                </Image.GestureRecognizers>
+
+              </Image>
+
+            </Grid>
+          </StackLayout>
+
+          <StackLayout>
+            <Label
+							Text="Threshold Alcohol"
+							FontSize="12"
+							FontAttributes="Bold"
+							TextColor="White"
+							TranslationX="10"
+						/>
+
+            <Grid
+							Padding="10,0,10,0">
+
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="15" />
+              </Grid.ColumnDefinitions>
+
+              <Slider
+								Value="{Binding AlcoholValue, Mode=TwoWay}"
+								Grid.Column="0"
+								Minimum="0"
+								Maximum="16"
+							/>
+
+              <Label
+								Text="{Binding AlcoholValue, StringFormat='{0:0.0} %'}"
+								FontSize="10"
+								TextColor="White"
+								Grid.Column="1"
+								TranslationY="10"
+							/>
+
+              <Image
+								Source="bell_image.png"
+								WidthRequest="13"
+								HeightRequest="24"
+								Grid.Column="2">
+
+                <Image.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding TapBellAlcohol}"/>
+                </Image.GestureRecognizers>
+
+              </Image>
+
+            </Grid>
+          </StackLayout>
+
+          <Grid
+						Padding="10"
+						TranslationY="30"
+						HeightRequest="30">
+
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="50*" />
+              <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+							Command="{Binding ResetButtonCommand}"
+							Text="Reset"
+							FontSize="10"
+							TextColor="Black"
+							BackgroundColor="White"
+							Grid.Column="0"
+						/>
+
+            <Button
+							Command="{Binding ApplyButtonCommand}"
+							Text="Apply &amp; Save"
+							FontSize="10"
+							TextColor="Black"
+							BackgroundColor="White"
+							Grid.Column="1"
+						/>
+
+          </Grid>
+
+
+        </StackLayout>
+
+      </Grid>
+    </ScrollView>
+
+    <!-- POPUP DIALOG -->
+    <StackLayout
+			IsVisible="{Binding IsDialogShown}"
+			BackgroundColor="#bebb98"
+			Opacity="0.9"
+			HorizontalOptions="Center"
+			VerticalOptions="Center"
+			Padding="20, 0, 20, 20"
+			WidthRequest="250"
+			HeightRequest="180">
+
+
+      <Label
+				Text="Process Notification"
+				FontSize="12"
+				FontAttributes="Bold"
+				TextColor="Black"
+				TranslationY="5"
+				TranslationX="15"
+			/>
+
+      <Grid
+				ColumnSpacing="5"
+				RowSpacing="10"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill"
+				TranslationY="10">
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50*" />
+          <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+         Text="1. Notify at"
+         FontSize="12"
+         FontAttributes="Bold"
+         TextColor="Black"
+         TranslationY="5"
+         Grid.Row="0"
+         Grid.Column="0"
+				/>
+
+        <Label
+					Text="2. Notify at"
+					FontSize="12"
+					FontAttributes="Bold"
+					TextColor="Black"
+					TranslationY="5"
+					Grid.Row="1"
+					Grid.Column="0"
+				/>
+
+        <Button
+					Command="{Binding PopupAddButtonCommand}"
+					Text="Add Notification"
+					FontSize="10"
+					TextColor="Black"
+					BackgroundColor="White"
+					Grid.Column="0"
+					Grid.Row="3"
+				/>
+
+        <Button
+					Command="{Binding PopupApplyButtonCommand}"
+					Text="Apply"
+					FontSize="10"
+					TextColor="Black"
+					BackgroundColor="White"
+					Grid.Column="1"
+					Grid.Row="3"
+				/>
+
+        <Entry
+					Text="30 %"
+					BackgroundColor="White"
+					Grid.Column="1"
+					Grid.Row="0"
+				/>
+
+        <Entry
+					Text="50 %"
+					BackgroundColor="White"
+					Grid.Column="1"
+					Grid.Row="1"
+				/>
+
+
+      </Grid>
+    </StackLayout>
+  </Grid>
+
 </ContentPage>
