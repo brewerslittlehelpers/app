@@ -7,20 +7,6 @@
   <StackLayout>
     <Label Text="This is the history page"/>
     <Button Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"/>
-    <Label Text="{Binding Test}"
-    		FontSize="Large"
-    		HorizontalOptions="Center"
-    		VerticalOptions="Center">
-	
-    	<Label.BindingContext>
-<!--    		<local:HistoryViewModel />-->
-    	</Label.BindingContext>
-    </Label>
-   <Label Text="{Binding testBatch.Name}"
-    		FontSize="Large"
-    		HorizontalOptions="Center"
-    		VerticalOptions="Center">
-    </Label>
 
     <Grid>
 			<Grid.ColumnDefinitions>
