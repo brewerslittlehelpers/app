@@ -21,6 +21,10 @@ namespace BrewersHelper
 			get { 
 				if (database == null) {
 					database = new SampleDatabase();
+
+					// hack for Josh
+					database.ResetDatabase ();
+					database.CreateDatabase ();
 				}
 				return database;
 			}
@@ -28,8 +32,6 @@ namespace BrewersHelper
 
         public App()
         {
-//			Database = new SampleDatabase ();
-
             var buttonStyle = new Style(typeof(Button))
             {
                 Setters =

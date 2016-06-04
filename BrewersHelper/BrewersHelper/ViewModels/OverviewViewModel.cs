@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Syncfusion.SfChart.XForms;
+using System.Diagnostics;
 
 namespace BrewersHelper.ViewModels
 {
@@ -36,31 +37,35 @@ namespace BrewersHelper.ViewModels
 		// Commands
 
 		public ICommand TresholdButtonCommand { get; private set;}
+		public ICommand TapCommand { get; private set;}
+
 
         public OverviewViewModel(INavigationService navigationService)
         {
             _navigationservice = navigationService;
 
+			TapCommand = new Command(() =>
+				_navigationservice.NavigateTo (Locator.History));
+			
+
 			// Set treshhold button
 			TresholdButtonLabel = "Treshold";
 			TresholdButtonCommand = new Command(() =>
-			_navigationservice.NavigateTo (Locator.Thresholds));
-
+				_navigationservice.NavigateTo (Locator.Thresholds));
 
 			// Reading labels
 
 			List<SampleModel> samples = App.Database.GetSamples().ToList();
 
-			double alcoholReading = samples.Last().Alcohol;
-
-
 			// hacky way of doing this
+
 			int currentBatch = 1;
 			List<SampleModel> currentBatchSamples = new List<SampleModel>();
 
 			foreach (SampleModel s in samples)
 			{
 				if (s.O2MBatchKey == currentBatch) {
+//					Debug.WriteLine ("adding {0}", s.Id);
 					currentBatchSamples.Add (s);
 				}
 			}
@@ -78,7 +83,7 @@ namespace BrewersHelper.ViewModels
 				TemperatureGraph.Add (new ChartDataPoint(s.Time, s.Temp));
 			}
 
-			SampleModel lastSampleFromBatch = currentBatchSamples.Last ();
+			SampleModel lastSampleFromBatch = currentBatchSamples.Last<SampleModel> ();
 
 			AlcoholReadingLabel = String.Format("{0}%", lastSampleFromBatch.Alcohol);
 			GravityReadingLabel = String.Format("{0}", lastSampleFromBatch.Gravity);
