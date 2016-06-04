@@ -17,6 +17,8 @@ namespace BrewersHelper.Views
         {
             InitializeComponent();
             BindingContext = new HistoryViewModel(SimpleIoc.Default.GetInstance<INavigationService>());
+
+
         }
     }
 }
