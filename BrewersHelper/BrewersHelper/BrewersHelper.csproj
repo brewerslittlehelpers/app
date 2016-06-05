@@ -66,9 +66,6 @@
     <Compile Include="Models\BatchModel.cs" />
     <Compile Include="Models\SampleModel.cs" />
     <Compile Include="Models\DeviceModel.cs" />
-    <Compile Include="Views\SetTimer.xaml.cs">
-      <DependentUpon>SetTimer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Data\SampleDatabase.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
     <Compile Include="Data\ISQLite.cs" />
@@ -116,9 +113,6 @@
     <EmbeddedResource Include="Views\Menu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SetTimer.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
