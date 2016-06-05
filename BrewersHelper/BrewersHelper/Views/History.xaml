@@ -6,7 +6,6 @@
 			BackgroundColor="#2d3e50"
 			xmlns:local="clr-namespace:BrewersHelper;assembly=BrewersHelper">
   <StackLayout>
-    <Label Text="This is the history page"/>
     <Button Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"/>
 
     <Grid>
