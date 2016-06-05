@@ -70,6 +70,8 @@
     <Compile Include="ViewModels\GraphViewModel.cs" />
     <Compile Include="Data\ISQLite.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\Batch.cs" />
+    <Compile Include="Models\DataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616">
