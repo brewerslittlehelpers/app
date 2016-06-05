@@ -18,10 +18,10 @@ namespace BrewersHelper.ViewModels
         private string compareButtonLabel;
 
 		private string test;
-		private Batch batch = new Batch ("Porter", 1);
+
 		public ObservableCollection<Helper> helperList{ get; private set; }
 
-		public static ObservableCollection<Batch> batches { get; set; }
+		public ObservableCollection<Batch> batches { get; set; }
 
 		private string addHelperLabel;
 		private string newHelperName;
@@ -57,7 +57,7 @@ namespace BrewersHelper.ViewModels
 			this.Test = "Lauretta";
 
 
-			HistoryViewModel.batches = DataSource.getBatches ();
+			this.batches = DataSource.getBatches ();
 
 
 
@@ -110,33 +110,33 @@ namespace BrewersHelper.ViewModels
 
 
 
-		public class Batch {
-			private string name;
-			private int isComplete;
-
-			public Batch(string name, int isComplete){
-				this.name = name;
-				this.isComplete = isComplete;
-			}
-
-			public string Name {
-				get {
-					return name;
-				}
-				set {
-					name = value;
-				}
-			}
-
-			public int IsComplete{
-				get {
-					return isComplete;
-				}
-				set {
-					isComplete = value;
-				}
-			}
-
-		}
+//		public class Batch {
+//			private string name;
+//			private int isComplete;
+//
+//			public Batch(string name, int isComplete){
+//				this.name = name;
+//				this.isComplete = isComplete;
+//			}
+//
+//			public string Name {
+//				get {
+//					return name;
+//				}
+//				set {
+//					name = value;
+//				}
+//			}
+//
+//			public int IsComplete{
+//				get {
+//					return isComplete;
+//				}
+//				set {
+//					isComplete = value;
+//				}
+//			}
+//
+//		}
     }
 }

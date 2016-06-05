@@ -3,7 +3,8 @@
 			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			x:Class="BrewersHelper.Views.History"
 			Title="Compare Batches"
-			BackgroundColor="#2d3e50">
+			BackgroundColor="#2d3e50"
+			xmlns:local="clr-namespace:BrewersHelper;assembly=BrewersHelper">
   <StackLayout>
     <Label Text="This is the history page"/>
     <Button Text="{Binding CompareButtonLabel}" Command="{Binding CompareButtonCommand}"/>
