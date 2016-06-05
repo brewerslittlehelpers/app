@@ -20,15 +20,15 @@
         	<Label Text="Brewed" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100"  />
 		</Grid>
 
-<!--	<ListView x:Name="listView2" ItemsSource="{Binding helperList}" >
+	<ListView x:Name="listView" ItemsSource="{Binding batches}" >
 		<ListView.ItemTemplate>
 			<DataTemplate>
-				<SwitchCell Text="Switch" Grid.Column="1" On="true" />
+				<SwitchCell Text="{Binding name}" On="{Binding isOn}" />
 			</DataTemplate>
 		</ListView.ItemTemplate>
-	</ListView>-->
+	</ListView>
 
-
+<!--
     <ListView x:Name="listView" ItemsSource="{Binding helperList}" SelectedItem="{Binding SelectedItem}">
 		  <ListView.ItemTemplate>
 		    <DataTemplate>
@@ -36,8 +36,6 @@
 		         <ViewCell.ContextActions>
 		            <MenuItem Command="{Binding Source={x:Reference listView}, Path=BindingContext.DeleteHelperCommand}" CommandParameter="{Binding }"
 		               Text="Delete" IsDestructive="True" />
-		          <!-- <MenuItem Command="{Binding DeleteHelperCommand}" CommandParameter="{Binding .}" BindingContext="{Binding Source={x:Reference listView}, Path=BindingContext}"
-		           Text="Delete" IsDestructive="True" />-->
 		         </ViewCell.ContextActions>
 		         <StackLayout Padding="10,10,10,10" >
 					<Grid>
@@ -47,12 +45,13 @@
 						</Grid.ColumnDefinitions>
 		            	<Label Text="{Binding HelperName}" Grid.Column="0" />
 						<Label Text="{Binding BatteryPercent}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" />
+						<SwitchCell Text="Switch" Grid.Column="1" On="true" />
 					</Grid>
 		         </StackLayout>
 		      </ViewCell>
 		    </DataTemplate>
 		  </ListView.ItemTemplate>
-		</ListView>
+		</ListView>-->
 
 <!--	<ListView ItemsSource="{x:Static local:NamedColor.All}">
 	    <ListView.ItemTemplate>

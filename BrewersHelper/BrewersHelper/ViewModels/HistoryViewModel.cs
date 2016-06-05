@@ -21,6 +21,8 @@ namespace BrewersHelper.ViewModels
 		private Batch batch = new Batch ("Porter", 1);
 		public ObservableCollection<Helper> helperList{ get; private set; }
 
+		public static ObservableCollection<Batch> batches { get; set; }
+
 		private string addHelperLabel;
 		private string newHelperName;
 
@@ -55,8 +57,7 @@ namespace BrewersHelper.ViewModels
 			this.Test = "Lauretta";
 
 
-			SelectMultipleBasePage<Helper> multiPage;
-			var batchList = new List<Helper>();
+			HistoryViewModel.batches = DataSource.getBatches ();
 
 
 
