@@ -55,6 +55,8 @@ namespace BrewersHelper.ViewModels
 			this.Test = "Lauretta";
 
 
+			SelectMultipleBasePage<Helper> multiPage;
+			var batchList = new List<Helper>();
 
 
 
