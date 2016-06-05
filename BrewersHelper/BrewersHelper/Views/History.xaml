@@ -20,6 +20,14 @@
         	<Label Text="Brewed" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100"  />
 		</Grid>
 
+<!--	<ListView x:Name="listView2" ItemsSource="{Binding helperList}" >
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<SwitchCell Text="Switch" Grid.Column="1" On="true" />
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>-->
+
 
     <ListView x:Name="listView" ItemsSource="{Binding helperList}" SelectedItem="{Binding SelectedItem}">
 		  <ListView.ItemTemplate>
@@ -38,8 +46,7 @@
 							<ColumnDefinition Width="3*" />
 						</Grid.ColumnDefinitions>
 		            	<Label Text="{Binding HelperName}" Grid.Column="0" />
-						<!-- <Label Text="{Binding BatteryPercent}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" /> -->
-						<SwitchCell Text="Switch" Grid.Column="1" On="true" />
+						<Label Text="{Binding BatteryPercent}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" />
 					</Grid>
 		         </StackLayout>
 		      </ViewCell>
